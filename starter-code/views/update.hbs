@@ -1,0 +1,16 @@
+<form action="/list/{{placeToUpdate._id}}/update" method="PUT">
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" value="{{placeToUpdate.name}}" required>
+
+  <label for="type">Type:</label>
+  <select id="type" name="type" required>
+    <option value="coffee shop" {{#ifEqual placeToUpdate.type "coffee shop"}}selected{{/ifEqual}}>Coffee Shop</option>
+    <option value="bookstore" {{#ifEqual placeToUpdate.type "bookstore"}}selected{{/ifEqual}}>Bookstore</option>
+  </select>
+
+  <label>Address</label>
+  <input type="text" id="latitude" name="latitude" value="{{placeToUpdate.location.coordinates.1}}" required>
+  <input type="text" id="longitude" name="longitude" values="{{placeToUpdate.location.coordinates.0}}" required>
+
+  <button type="submit">Update</button>
+</form>

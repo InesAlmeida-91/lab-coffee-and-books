@@ -1,0 +1,11 @@
+<h3>List of places</h3>
+<ul>
+  {{#each places}}
+    <li>{{name}}</li>
+    <form action="/list/{{_id}}/delete" method="POST">
+      <button type="submit">Delete</button>
+    </form>
+  {{/each}}
+</ul>
+
+<div id="map"></div>
